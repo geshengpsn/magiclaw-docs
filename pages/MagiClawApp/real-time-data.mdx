@@ -1,0 +1,16 @@
+---
+title: Real-time Data StreamingStreamingStreaming
+---
+
+# Real-time Data Streaming
+
+### Starting Data Streaming
+1. In the “Panel” tab, select “Remote”.
+2. Press “Enable sending data” to start transmitting real-time sensor data via WebSocket. Data includes the iPhone's 6D pose and RGB video.
+
+### Receiving Data
+To receive data from another device, follow these steps:
+- Find the iPhone’s IP address in the app’s “Settings” page.
+- On the receiving end, create a WebSocket client and connect to: `ws://<IP-address>:8080`.
+
+*For more details on the data formats, check the appendix.*

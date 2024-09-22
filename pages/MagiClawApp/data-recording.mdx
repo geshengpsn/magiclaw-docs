@@ -1,0 +1,44 @@
+---
+title: Data Recording and Storage
+---
+
+# Data Recording and Storage
+
+### Connecting to the Raspberry Pi
+1. Ensure both your iPhone and Raspberry Pi are connected to the same Wi-Fi network.
+2. Go to the app’s “Settings” page and set your Raspberry Pi’s IP address or hostname.
+
+    - To find your Raspberry Pi's IP address, run `ifconfig` in your Raspberry Pi's terminal.
+    - Run `hostname` to find its hostname.
+
+### Recording Data
+1. Navigate to the "Panel" page and tap “Record”.
+2. Confirm that the Raspberry Pi connection status is “Connected.”
+3. Choose the appropriate task scenario and provide a description.
+4. Press “Start recording” to begin capturing data. Press the button again to stop.
+
+### Viewing and Sharing Data
+You can access saved data by navigating to the “MagiClaw” folder in the iPhone’s “Files” app.
+
+### File Formats
+- **`metadata.json`**: Contains all properties of the recorded data.
+
+- **`AngleData.csv`**: Contains angle values from the encoder.
+
+- **`R_ForceData.csv`**: Contains 6D force data from the <u>right-side</u> soft robotic finger, measurements in newtons (N) and newton-meters (Nm). Columns 2 to 7 represent the following values: Fx, Fy, Fz, Mx, My, Mz.
+
+- **`L_ForceData.csv`**: Contains 6D force data from the <u>left-side</u> soft robotic finger, measurements in newtons (N) and newton-meters (Nm). Columns 2 to 7 represent the following values: Fx, Fy, Fz, Mx, My, Mz.
+
+- **`PoseData.csv`**: Contains 6D pose data of the iPhone measured by ARKit. It's a 4x4 transformation matrix in original, stored column-wise.
+
+- **`RGB.mp4`**: Rear camera recording, with a resolution of 640x480 pixels.
+
+- **`Depth`**: Stored in `.bin` format within the Depth folder. Each file contains depth data for the corresponding frame, with a resolution of 256x192. The data type is UInt, and the depth values are in units of 10e-4 meters.
+
+- **`Audio.m4a`**:  
+  - Format: AAC (Advanced Audio Coding)
+  - Sample Rate: 12kHz
+  - Channels: Mono (1 channel)
+
+### Timestamp
+- Present in the first column of each CSV file, indicating the elapsed time since recording started, in seconds. For depth data, timestamps are included in the file names.
